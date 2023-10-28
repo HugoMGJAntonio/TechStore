@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Carrinho</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/style.min.css" rel="stylesheet"> </head>
+
+<body class="cart">
+	<div id="nav-placeholder"></div>
+	<div class="container-fluid"> <img src="pure.png" class="img-fluid" width="100" height="100">
+		<br>
+		<br>
+		<h1>Carrinho</h1>
+		<div class="breadcrumb"><a href="/">Home</a><span class="sep">></span>Carrinho</div>
+        <!--Metodo de carrinho de compras e todas as coisas que implica, como mail morada, pagamento-->
+		<p>Aqui pode ver os produtos selecionados por si e os preços dos mesmos. Após ter a certeza do que quer comprar pode preencher os campos necessarios e realizar a encomenda</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Morada de Envio</h4>
+                <form class="needs-validation" novalidate="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" required>
+                            <label for="firstName">Primeiro nome</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" required>
+                            <label for="lastName">Ultimo nome</label>
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" required>
+                            <label for="address">Morada</label>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control">
+                            <label for="address2">Morada secundária</label>
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-select" required>
+                                <option value="">Escolha...</option>
+                                <option>Portugal</option>
+                            </select>
+                            <label for="country">Pais</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" required>
+                                <option value="">Escolhe...</option>
+                                <option>Sintra</option>
+                                <option>Lumiar</option>
+                            </select>
+                            <label for="state">Freguesia</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" required>
+                            <label for="zip">Código Postal</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="same-address">A morada de envio é a mesma de faturação?</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="save-info">Guardar a informação para a proxima vez?</label>
+                    </div>
+                    <hr>
+                    <!--Metodo de pagamento-->
+                    <h4>Payment</h4>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" checked="" required>
+                        <label for="credit">Cartão Crédito</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" required>
+                        <label for="debit">Cartão Débito</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" required>
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div class="row gy-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" required>
+                            <label>Nome no cartão</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" required>
+                            <label for="cc-number">Número do Cartão</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" required>
+                            <label for="cc-expiration">Validade</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" required>
+                            <label for="cc-cvv">CVV</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Continuar para o checkout</button>
+                </form>
+            </div>
+            <div class="col">
+                <!--Produtos no carrinho e o total em euros-->
+                <h4 class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary">Your cart</span>
+                    <span class="cartCount badge bg-primary rounded-pill"></span>
+                </h4>
+                <ul class="list-group cartDisplay">
+                    <li class="list-group-item d-flex justify-content-between"> <span>Total (EUR)</span> <strong>$<span class="price"></span>0</strong> </li>
+                </ul>
+                <br>
+                <form class="card">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Promo code">
+                        <button type="submit" class="btn btn-secondary">Coletar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+	<div id="footer-placeholder"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js/init.js"></script>
+
+<br>  
+<footer class="bg-dark text-center text-white">
+    <div class="container p-4">
+        <section class="">
+        <form action="">
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto">
+                <p class="pt-2">
+                    <strong>Subscreva a nossa newsletter</strong>
+                </p>
+                </div>
+                <div class="col-md-5 col-12">
+                <div class="form-outline form-white mb-4">
+                    <input type="email" id="form5Example2" class="form-control" placeholder="Email address">
+                </div>
+                </div>
+                <div class="col-auto">
+                <button type="submit" class="btn btn-outline-light mb-4">
+                    Subscreva 
+                </button>
+                </div>
+            </div>
+        </form>
+        </section>
+        <section class="">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled mb-0">
+                <li>
+                <a href="contact.html">Contactos</a>
+                </li>
+                <li>
+                    <a href="account.html">Conta</a>
+                </li>
+                <li>
+                    <a href="category.html">Categorias</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+                <li>
+                <a href="logout.html">Terminar Sessão</a>
+                </li>
+                <li>
+                <a href="product.html">Produtos</a>
+                <li>
+                    <a href="index1.html">Home</a>
+                </li>
+            </div>
+        </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="#">PureTechStore</a>
+    </div>
+</footer>
+
+
+</html>
